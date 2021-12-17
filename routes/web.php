@@ -18,23 +18,62 @@ Route::get('/', function () {
     $data = [
         "nav" => [
                     [
-                        "name" => "home",
-                        "link" => "#"
+                        "name" => "Home",
+                        "link" => "home"
                     ],
                     [
                         "name" => "Chi siamo",
-                        "link" => "#"
+                        "link" => "chi_siamo"
                     ],
                     [
                         "name" => "Prodotti",
-                        "link" => "#"
+                        "link" => "prodotti"
                     ],
                     [
                         "name" => "Contatti",
-                        "link" => "#"
+                        "link" => "contatti"
                     ]
                 ],
     ];
 
     return view('home', $data);
-});
+})->name('home');
+
+Route::get('/chi-siamo', function () {
+    $data = [
+        "nav" => [
+                    [
+                        "name" => "Home",
+                        "link" => "home"
+                    ]
+                ]    
+    ];
+
+    return view('chi_siamo', $data);
+})->name('chi_siamo');
+
+Route::get('/prodotti', function () {
+    $data = [
+        "nav" => [
+                    [
+                        "name" => "Home",
+                        "link" => "home"
+                    ]
+                ]    
+    ];
+
+    return view('prodotti', $data);
+})->name('prodotti');
+
+Route::get('/contatti', function () {
+    $data = [
+        "nav" => [
+                    [
+                        "name" => "Home",
+                        "link" => "home"
+                    ]
+                ]    
+    ];
+
+    return view('contatti', $data);
+})->name('contatti');
