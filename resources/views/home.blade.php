@@ -10,6 +10,21 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <header>
+            <nav>
+                <ul>
+                @foreach($nav as $list_item)
+                    @php 
+                    $link = $list_item["link"];
+                    echo "<li>";
+                        echo "<a href='$link'>";
+                    @endphp
+                            {{ $list_item["name"] }}
+                        </a>
+                    </li>
+                @endforeach
+                </ul>
+            </nav>
+        </header>
     </body>
 </html>

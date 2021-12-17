@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\VarDumper\Caster\LinkStub;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $data = [
+        "nav" => [
+                    [
+                        "name" => "home",
+                        "link" => "#"
+                    ],
+                    [
+                        "name" => "Chi siamo",
+                        "link" => "#"
+                    ],
+                    [
+                        "name" => "Prodotti",
+                        "link" => "#"
+                    ],
+                    [
+                        "name" => "Contatti",
+                        "link" => "#"
+                    ]
+                ],
+    ];
+
+    return view('home', $data);
 });
